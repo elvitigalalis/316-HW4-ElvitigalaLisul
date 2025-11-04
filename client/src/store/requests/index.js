@@ -24,20 +24,19 @@ async function request(path, method = "GET", body = null) {
     if (body) {
       options.body = JSON.stringify(body);
     }
+
     const response = await fetch(url, options);
     if (!response.ok) {
-      return new Error(
-        method +
-          " request for " +
-          path +
-          " failed with status " +
-          response.status
-      );
+      throw new Error("Request failed with status " + response.status);
     }
-    const data = await response.json();
-    return data;
+
+    const data = await response.json().catch(() => ({}));
+    return {
+      status: response.status,
+      data: data,
+    };
   } catch (e) {
-    return { success: false, error: e.message };
+    return { status: 500, data: { success: false, error: e.message } };
   }
 }
 
