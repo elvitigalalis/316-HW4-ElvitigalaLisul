@@ -151,9 +151,9 @@ registerUser = async (req, res) => {
         }).status(200).json({
             success: true,
             user: {
-                firstName: savedUser.firstName,
-                lastName: savedUser.lastName,  
-                email: savedUser.email              
+                firstName: newUser.firstName,
+                lastName: newUser.lastName,  
+                email: newUser.email              
             }
         })
 

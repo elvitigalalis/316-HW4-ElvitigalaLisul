@@ -57,7 +57,7 @@ deletePlaylist = async (req, res) => {
   console.log("delete Playlist with id: " + JSON.stringify(req.params.id));
   console.log("delete " + req.params.id);
   try {
-    const playlist = await db.deletePlaylist(req.params.id);
+    const playlist = await db.getPlaylistById(req.params.id);
     console.log("playlist found: " + JSON.stringify(playlist));
     if (!playlist) {
       return res.status(404).json({
@@ -139,7 +139,7 @@ getPlaylistPairs = async (req, res) => {
       return res.status(404).json({ success: false, error: "User not found" });
     }
 
-    const playlists = await db.getPlaylistsByOwnerEmail(user.email);
+    const playlists = await db.getPlaylistByOwnerEmail(user.email);
     console.log("found Playlists: " + JSON.stringify(playlists));
     if (!playlists || playlists.length === 0) {
       console.log("!playlists.length");
