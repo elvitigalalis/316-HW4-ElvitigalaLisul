@@ -7,7 +7,7 @@ import {
   test,
 } from "vitest";
 import dotenv from "dotenv";
-dotenv.config({ path: ".env" });
+dotenv.config({ path: __dirname + "/../.env" });
 
 import db from "../db/index.js";
 
