@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
 const dotenv = require("dotenv");
-const { DatabaseManager } = require("../index");
+const DatabaseManager = require("../DatabaseManager");
 dotenv.config({ path: __dirname + "/../../../.env" });
 
 class PostgreDatabaseManager extends DatabaseManager {

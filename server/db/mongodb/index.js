@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config({ path: __dirname + "/../../../.env" });
-const { DatabaseManager } = require("../index");
+const DatabaseManager = require("../DatabaseManager");
 
 const Playlist = require("../../models/playlist-model");
 const User = require("../../models/user-model");
