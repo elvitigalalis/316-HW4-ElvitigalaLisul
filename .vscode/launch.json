@@ -18,9 +18,16 @@
       "request": "launch",
       "name": "Reset Mongo Data",
       "program": "${workspaceFolder}/server/test/data/mongo/index.js",
-      "args": [
-        "--runInBand"
-      ],
+      "args": ["--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Reset Postgre Data",
+      "program": "${workspaceFolder}/server/test/data/postgre/index.js",
+      "args": ["--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
