@@ -90,9 +90,9 @@ test("Test #1) Reading a User from the Database", async () => {
 test("Test #2) Creating a User in the Database", async () => {
   // MAKE A TEST USER TO CREATE IN THE DATABASE
   const testUser = {
-    firstName: "CreateTest",
-    lastName: "User",
-    email: "createtest@example.com",
+    firstName: "LEE",
+    lastName: "EEEEE",
+    email: "EEEEE@example.com",
     passwordHash: "hash5678",
   };
 
@@ -104,9 +104,9 @@ test("Test #2) Creating a User in the Database", async () => {
 
   // NEXT TEST TO SEE IF IT WAS PROPERLY CREATED
   const expectedUser = {
-    firstName: "CreateTest",
-    lastName: "User",
-    email: "createtest@example.com",
+    firstName: "LEE",
+    lastName: "EEEEE",
+    email: "EEEEE@example.com",
   };
 
   let actualUser = {};
@@ -127,9 +127,9 @@ test("Test #2) Creating a User in the Database", async () => {
  */
 test("Test #3) Updating a User in the Database", async () => {
   const updated = await db.updateUser(createdUser._id || createdUser.id, {
-    firstName: "UpdatedName",
+    firstName: "Richard",
   });
-  expect(updated.firstName).toBe("UpdatedName");
+  expect(updated.firstName).toBe("Richard");
 });
 
 /**
@@ -146,7 +146,7 @@ test("Test #4) Reading a User by ID", async () => {
  */
 test("Test #5) Creating a Playlist in the Database", async () => {
   const testPlaylist = {
-    name: "Vitest Playlist",
+    name: "Lisul's Test Playlist",
     ownerEmail: createdUser.email,
     songs: [
       { title: "Song A", artist: "Tester", year: 2025, youTubeId: "abc123" },
